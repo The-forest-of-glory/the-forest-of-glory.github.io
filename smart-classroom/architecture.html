@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>平台架构 - 智慧教室管理信息系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .arch-diagram {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .arch-layer-detail {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        .arch-layer-detail h4 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        .layer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .layer-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .layer-item h5 {
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+        .layer-item ul {
+            list-style: none;
+            padding: 0;
+            font-size: 0.9rem;
+        }
+        .layer-item li {
+            padding: 0.3rem 0;
+            opacity: 0.9;
+        }
+        .tech-stack {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .tech-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .tech-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .tech-badge {
+            display: inline-block;
+            background: var(--light-color);
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            margin: 0.3rem;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>智慧教室管理系统</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">系统功能</a></li>
+                <li><a href="architecture.html" class="active">平台架构</a></li>
+                <li><a href="roles.html">参与者角色</a></li>
+                <li><a href="business.html">商业模式</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" style="font-size: 2.5rem;">平台架构设计</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem;">物联网标准四层架构，模块化设计</p>
+        </div>
+    </section>
+
+    <!-- 架构总览 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">系统架构总览</h2>
+            <div class="arch-diagram">
+                <div style="text-align: center; margin-bottom: 2rem;">
+                    <h3 style="color: var(--primary-color);">物联网四层架构</h3>
+                    <p style="color: #666;">从底层感知到上层应用的完整技术栈</p>
+                </div>
+                
+                <!-- 应用层 -->
+                <div class="arch-layer-detail">
+                    <h4><i class="fas fa-layer-group"></i> 应用层 (Application Layer)</h4>
+                    <p style="opacity: 0.9; margin-bottom: 1rem;">多终端用户交互界面，提供便捷的使用体验</p>
+                    <div class="layer-grid">
+                        <div class="layer-item">
+                            <h5><i class="fas fa-desktop"></i> Web管理端</h5>
+                            <ul>
+                                <li>管理员后台</li>
+                                <li>数据可视化</li>
+                                <li>系统配置</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-mobile-alt"></i> 教师APP</h5>
+                            <ul>
+                                <li>教学支持</li>
+                                <li>考勤管理</li>
+                                <li>质量分析</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-user"></i> 学生小程序</h5>
+                            <ul>
+                                <li>查询预约</li>
+                                <li>扫码报修</li>
+                                <li>学习助手</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-tv"></i> 智能大屏</h5>
+                            <ul>
+                                <li>电子班牌</li>
+                                <li>会议预约</li>
+                                <li>信息发布</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; font-size: 2rem; color: var(--primary-color); margin: 1rem 0;">↕</div>
+
+                <!-- 平台层 -->
+                <div class="arch-layer-detail" style="background: linear-gradient(135deg, #50C878 0%, #48A868 100%);">
+                    <h4><i class="fas fa-server"></i> 平台层 (Platform Layer)</h4>
+                    <p style="opacity: 0.9; margin-bottom: 1rem;">数据处理与智能决策的核心引擎</p>
+                    <div class="layer-grid">
+                        <div class="layer-item">
+                            <h5><i class="fas fa-database"></i> 数据中台</h5>
+                            <ul>
+                                <li>数据采集与清洗</li>
+                                <li>数据仓库</li>
+                                <li>数据治理</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-cogs"></i> 业务中台</h5>
+                            <ul>
+                                <li>微服务集群</li>
+                                <li>业务规则引擎</li>
+                                <li>API网关</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-brain"></i> AI引擎</h5>
+                            <ul>
+                                <li>人脸识别</li>
+                                <li>图像分析</li>
+                                <li>智能推荐</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; font-size: 2rem; color: var(--primary-color); margin: 1rem 0;">↕</div>
+
+                <!-- 网络层 -->
+                <div class="arch-layer-detail" style="background: linear-gradient(135deg, #FF6B6B 0%, #E85A5A 100%);">
+                    <h4><i class="fas fa-network-wired"></i> 网络层 (Network Layer)</h4>
+                    <p style="opacity: 0.9; margin-bottom: 1rem;">高速稳定的数据传输通道</p>
+                    <div class="layer-grid">
+                        <div class="layer-item">
+                            <h5><i class="fas fa-wifi"></i> 5G/WiFi6</h5>
+                            <ul>
+                                <li>高带宽</li>
+                                <li>低延迟</li>
+                                <li>大连接</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-project-diagram"></i> 物联网网关</h5>
+                            <ul>
+                                <li>协议转换</li>
+                                <li>数据汇聚</li>
+                                <li>设备管理</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-microchip"></i> 边缘计算</h5>
+                            <ul>
+                                <li>就近处理</li>
+                                <li>减少延迟</li>
+                                <li>降低带宽</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div style="text-align: center; font-size: 2rem; color: var(--primary-color); margin: 1rem 0;">↕</div>
+
+                <!-- 感知层 -->
+                <div class="arch-layer-detail" style="background: linear-gradient(135deg, #9370DB 0%, #8A63CC 100%);">
+                    <h4><i class="fas fa-broadcast-tower"></i> 感知层 (Perception Layer)</h4>
+                    <p style="opacity: 0.9; margin-bottom: 1rem;">实时采集环境、设备、人员数据</p>
+                    <div class="layer-grid">
+                        <div class="layer-item">
+                            <h5><i class="fas fa-temperature-high"></i> 环境传感器</h5>
+                            <ul>
+                                <li>温湿度</li>
+                                <li>光照度</li>
+                                <li>CO₂/PM2.5</li>
+                                <li>人体红外</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-video"></i> 视觉设备</h5>
+                            <ul>
+                                <li>人脸识别摄像头</li>
+                                <li>全景摄像头</li>
+                                <li>拾音器</li>
+                                <li>电子班牌</li>
+                            </ul>
+                        </div>
+                        <div class="layer-item">
+                            <h5><i class="fas fa-door-open"></i> 控制设备</h5>
+                            <ul>
+                                <li>智能门禁</li>
+                                <li>智能开关</li>
+                                <li>空调控制器</li>
+                                <li>智能投影</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术栈 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">核心技术栈</h2>
+            <div class="tech-stack">
+                <div class="tech-card">
+                    <h4><i class="fas fa-laptop-code"></i> 前端技术</h4>
+                    <div class="tech-badge">Vue.js 3</div>
+                    <div class="tech-badge">React</div>
+                    <div class="tech-badge">微信小程序</div>
+                    <div class="tech-badge">Element Plus</div>
+                    <div class="tech-badge">ECharts</div>
+                    <div class="tech-badge">Ant Design</div>
+                </div>
+                
+                <div class="tech-card">
+                    <h4><i class="fas fa-server"></i> 后端技术</h4>
+                    <div class="tech-badge">Spring Boot</div>
+                    <div class="tech-badge">Spring Cloud</div>
+                    <div class="tech-badge">Node.js</div>
+                    <div class="tech-badge">Python</div>
+                    <div class="tech-badge">Go</div>
+                </div>
+
+                <div class="tech-card">
+                    <h4><i class="fas fa-database"></i> 数据存储</h4>
+                    <div class="tech-badge">MySQL</div>
+                    <div class="tech-badge">PostgreSQL</div>
+                    <div class="tech-badge">Redis</div>
+                    <div class="tech-badge">MongoDB</div>
+                    <div class="tech-badge">Hive</div>
+                    <div class="tech-badge">ClickHouse</div>
+                </div>
+
+                <div class="tech-card">
+                    <h4><i class="fas fa-brain"></i> AI/ML框架</h4>
+                    <div class="tech-badge">TensorFlow</div>
+                    <div class="tech-badge">PyTorch</div>
+                    <div class="tech-badge">OpenCV</div>
+                    <div class="tech-badge">YOLO</div>
+                    <div class="tech-badge">BERT</div>
+                </div>
+
+                <div class="tech-card">
+                    <h4><i class="fas fa-cloud"></i> 云服务</h4>
+                    <div class="tech-badge">阿里云</div>
+                    <div class="tech-badge">腾讯云</div>
+                    <div class="tech-badge">AWS</div>
+                    <div class="tech-badge">Docker</div>
+                    <div class="tech-badge">Kubernetes</div>
+                </div>
+
+                <div class="tech-card">
+                    <h4><i class="fas fa-wifi"></i> 物联网</h4>
+                    <div class="tech-badge">MQTT</div>
+                    <div class="tech-badge">CoAP</div>
+                    <div class="tech-badge">LoRa</div>
+                    <div class="tech-badge">Zigbee</div>
+                    <div class="tech-badge">NB-IoT</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 数据流程 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">数据处理流程</h2>
+            <div class="arch-diagram">
+                <div style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="text-align: center; flex: 1; min-width: 150px;">
+                        <div style="background: var(--primary-color); color: white; padding: 1.5rem; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-satellite-dish"></i>
+                        </div>
+                        <h4 style="margin-top: 1rem;">数据采集</h4>
+                        <p style="color: #666; font-size: 0.9rem;">传感器、摄像头</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--primary-color);">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 150px;">
+                        <div style="background: var(--secondary-color); color: white; padding: 1.5rem; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h4 style="margin-top: 1rem;">数据传输</h4>
+                        <p style="color: #666; font-size: 0.9rem;">物联网网关</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--primary-color);">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 150px;">
+                        <div style="background: var(--accent-color); color: white; padding: 1.5rem; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-filter"></i>
+                        </div>
+                        <h4 style="margin-top: 1rem;">数据清洗</h4>
+                        <p style="color: #666; font-size: 0.9rem;">去重、纠错</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--primary-color);">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 150px;">
+                        <div style="background: #9370DB; color: white; padding: 1.5rem; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4 style="margin-top: 1rem;">数据分析</h4>
+                        <p style="color: #666; font-size: 0.9rem;">AI建模</p>
+                    </div>
+                    <div style="font-size: 2rem; color: var(--primary-color);">→</div>
+                    <div style="text-align: center; flex: 1; min-width: 150px;">
+                        <div style="background: #FF8C00; color: white; padding: 1.5rem; border-radius: 50%; width: 100px; height: 100px; margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                            <i class="fas fa-cogs"></i>
+                        </div>
+                        <h4 style="margin-top: 1rem;">智能决策</h4>
+                        <p style="color: #666; font-size: 0.9rem;">自动控制</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 安全保障 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">安全保障体系</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>数据安全</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 数据加密传输（TLS/SSL）</li>
+                        <li>✓ 数据库加密存储</li>
+                        <li>✓ 敏感数据脱敏处理</li>
+                        <li>✓ 数据备份与容灾</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-shield"></i>
+                    </div>
+                    <h3>隐私保护</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 符合《个人信息保护法》</li>
+                        <li>✓ 仅存特征值，不存原图</li>
+                        <li>✓ 数据本地化部署</li>
+                        <li>✓ 用户授权与知情同意</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3>访问控制</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li>✓ 基于角色的权限管理</li>
+                        <li>✓ 多因素身份认证</li>
+                        <li>✓ 操作日志审计</li>
+                        <li>✓ 异常行为检测</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>智慧教室管理系统</h4>
+                    <p>运用物联网、人工智能、大数据等技术，构建新一代智慧教育平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="features.html">系统功能</a></li>
+                        <li><a href="architecture.html">平台架构</a></li>
+                        <li><a href="roles.html">参与者角色</a></li>
+                        <li><a href="business.html">商业模式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> info@smartclassroom.edu</p>
+                    <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 智慧教室管理信息系统. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>系统功能 - 智慧教室管理信息系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .feature-detail {
+            background: white;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .feature-detail h3 {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        .feature-detail h4 {
+            color: var(--dark-color);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+        .feature-detail ul {
+            list-style: none;
+            padding: 0;
+        }
+        .feature-detail li {
+            padding: 0.8rem 0;
+            padding-left: 30px;
+            position: relative;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .feature-detail li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        .feature-highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            margin: 1.5rem 0;
+        }
+        .feature-highlight h5 {
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>智慧教室管理系统</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html" class="active">系统功能</a></li>
+                <li><a href="architecture.html">平台架构</a></li>
+                <li><a href="roles.html">参与者角色</a></li>
+                <li><a href="business.html">商业模式</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" style="font-size: 2.5rem;">系统功能模块</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem;">六大核心功能，全方位智慧管理</p>
+        </div>
+    </section>
+
+    <!-- 功能详情 -->
+    <section class="section">
+        <div class="container">
+            <!-- 智能空间管理 -->
+            <div class="feature-detail" id="space">
+                <h3><i class="fas fa-map-marked-alt"></i> 模块1：智能空间管理</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让资源"看得见、抢得到"，解决学生扫楼找教室、社团申请周期长的问题</p>
+                
+                <h4>1. 可视化地图</h4>
+                <ul>
+                    <li>校园地图实时显示教室状态（绿色-空闲 / 红色-占用 / 黄色-预约中）</li>
+                    <li>支持楼层切换、教室筛选、设备查询</li>
+                    <li>直观的占用率统计和热力图展示</li>
+                </ul>
+
+                <h4>2. 智能推荐</h4>
+                <ul>
+                    <li>根据需求（人数、时间、设备要求）自动推荐最优教室</li>
+                    <li>考虑距离、容量匹配度、设备完备性等多维因素</li>
+                    <li>提供多个备选方案供用户选择</li>
+                </ul>
+
+                <h4>3. 分级预约系统</h4>
+                <ul>
+                    <li><strong>学生自习：</strong>实时查询空闲教室，扫码进入，无需预约</li>
+                    <li><strong>教师教学：</strong>提前预约，享有优先权限</li>
+                    <li><strong>社团活动：</strong>线上申请 → 指导老师审批 → 院系管理员审核 → 自动流转</li>
+                </ul>
+
+                <h4>4. 智能约束机制</h4>
+                <ul>
+                    <li>小团体占用大教室自动预警（如5人占用100人教室）</li>
+                    <li>信用分体系：累计违规扣分，影响未来预约权限</li>
+                    <li>资源利用率实时监控和优化建议</li>
+                </ul>
+            </div>
+
+            <!-- 设备运维管理 -->
+            <div class="feature-detail" id="maintenance">
+                <h3><i class="fas fa-wrench"></i> 模块2：设备运维管理</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让报修"扫一扫、抢着修"，设备故障响应快</p>
+                
+                <h4>1. 扫码报修</h4>
+                <ul>
+                    <li>每台设备配备专属二维码</li>
+                    <li>扫码 → 拍照 → 描述故障 → 提交，30秒完成报修</li>
+                    <li>自动记录报修人、时间、位置信息</li>
+                </ul>
+
+                <h4>2. 智能派单</h4>
+                <ul>
+                    <li>根据故障类型自动匹配维修团队</li>
+                    <li>考虑维修员当前位置、工作负载、专业技能</li>
+                    <li>紧急故障优先派单，确保5分钟响应</li>
+                </ul>
+
+                <h4>3. 抢单机制</h4>
+                <ul>
+                    <li>维修员查看工单主动抢单，响应速度纳入绩效考核</li>
+                    <li>完工后用户评价，形成闭环管理</li>
+                    <li>历史记录查询，经验知识沉淀</li>
+                </ul>
+
+                <h4>4. 预测性维护</h4>
+                <ul>
+                    <li>基于设备使用时长、故障历史预测潜在问题</li>
+                    <li>自动生成保养计划，提前预防故障</li>
+                    <li>设备全生命周期管理，电子台账记录</li>
+                </ul>
+
+                <div class="feature-highlight">
+                    <h5><i class="fas fa-lightbulb"></i> 创新亮点</h5>
+                    <p>设备管控平台打通所有物联网设备（主机、电脑、投影、门禁、灯光、空调等），实现全方位可视化管控，远程监视室内实况。采用"自主上报式"而非"用时查询"模式，动态精准掌握设备状态。</p>
+                </div>
+            </div>
+
+            <!-- 智慧考勤系统 -->
+            <div class="feature-detail" id="attendance">
+                <h3><i class="fas fa-user-check"></i> 模块3：智慧考勤系统</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让考勤"无感知、零干扰"，解放教师点名时间</p>
+                
+                <h4>1. 多模态识别</h4>
+                <ul>
+                    <li>主要方式：人脸识别自动签到</li>
+                    <li>辅助方式：一卡通刷卡</li>
+                    <li>备用方式：手机定位签到</li>
+                </ul>
+
+                <h4>2. 无感签到</h4>
+                <ul>
+                    <li>教室门口摄像头自动识别进入学生</li>
+                    <li>考勤数据实时同步到教师端和系统后台</li>
+                    <li>全程无需学生主动操作，零干扰教学</li>
+                </ul>
+
+                <h4>3. 异常预警</h4>
+                <ul>
+                    <li>迟到、早退、缺勤自动标注</li>
+                    <li>连续缺勤自动预警，提醒辅导员关注</li>
+                    <li>替考检测：人脸不匹配立即预警</li>
+                </ul>
+
+                <h4>4. 数据分析</h4>
+                <ul>
+                    <li>出勤率、迟到率等多维度统计</li>
+                    <li>个人考勤记录、班级对比分析</li>
+                    <li>导出考勤报表，支持教务管理</li>
+                </ul>
+
+                <div class="feature-highlight">
+                    <h5><i class="fas fa-shield-alt"></i> 隐私保护承诺</h5>
+                    <p>严格遵守《个人信息保护法》，仅存储人脸特征值，不保存原始照片。数据本地化部署，不出校园。所有数据处理经学生知情同意，并通过隐私影响评估。</p>
+                </div>
+            </div>
+
+            <!-- 环境智能调控 -->
+            <div class="feature-detail" id="environment">
+                <h3><i class="fas fa-temperature-high"></i> 模块4：环境智能调控</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让设备"会思考、自己动"，智能化环境管理</p>
+                
+                <h4>1. 光照自动调节</h4>
+                <ul>
+                    <li>光照传感器实时检测教室亮度</li>
+                    <li>自然光不足时自动开灯，过亮时自动关灯</li>
+                    <li>支持分区控制，节约能源</li>
+                </ul>
+
+                <h4>2. 温湿度智能控制</h4>
+                <ul>
+                    <li>温湿度超过设定阈值自动启动空调</li>
+                    <li>无人时自动关闭，节能环保</li>
+                    <li>夏季制冷、冬季制热自动切换</li>
+                </ul>
+
+                <h4>3. 空气质量监测</h4>
+                <ul>
+                    <li>CO₂、PM2.5实时监测</li>
+                    <li>空气质量差时联动新风系统</li>
+                    <li>数据可视化展示，保障师生健康</li>
+                </ul>
+
+                <h4>4. 场景模式切换</h4>
+                <ul>
+                    <li><strong>上课模式：</strong>灯光全开、投影待命、适宜温度</li>
+                    <li><strong>投影模式：</strong>窗帘自动关闭、灯光调暗、投影开启</li>
+                    <li><strong>自习模式：</strong>部分灯光、安静环境</li>
+                    <li><strong>离开模式：</strong>延迟断电，确保无人后关闭所有设备</li>
+                </ul>
+
+                <div class="feature-highlight">
+                    <h5><i class="fas fa-leaf"></i> 节能减排效果</h5>
+                    <p>通过智能调控，预计年节省电费50-100万元。支持课表联动和预约联动两种模式，实现教室、实验室、会议室的智能启停，既保证常态化使用，又实现按需申请，责任到人。</p>
+                </div>
+            </div>
+
+            <!-- 智能录播分析 -->
+            <div class="feature-detail" id="recording">
+                <h3><i class="fas fa-video"></i> 模块5：智能录播与分析（创新功能）</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让教学"有数据、能追踪"，数据驱动教学改进</p>
+                
+                <h4>1. PPT自动同步（核心创新）</h4>
+                <ul>
+                    <li><strong>教师上传PPT：</strong>系统根据摄像头画面自动匹配当前讲解页码</li>
+                    <li><strong>未上传PPT：</strong>摄像头自动截取投影画面生成PPT</li>
+                    <li><strong>智能切片：</strong>录播视频按PPT页码自动切分</li>
+                    <li><strong>精准跳转：</strong>学生点击某页PPT直接跳转对应讲解片段</li>
+                </ul>
+
+                <h4>2. 学情分析</h4>
+                <ul>
+                    <li>每5分钟自动抓拍统计抬头率、专注度（匿名化处理）</li>
+                    <li>识别举手、起立等行为，量化课堂活跃度</li>
+                    <li>课后生成数据看板：考勤、抬头率曲线、互动热点时段</li>
+                    <li>仅输出聚合数据，不识别个体身份</li>
+                </ul>
+
+                <h4>3. 4K多机位录播</h4>
+                <ul>
+                    <li>全景、特写、板书多机位自动切换</li>
+                    <li>教师移动自动跟踪，智能构图</li>
+                    <li>支持直播和点播，课后资源永久保存</li>
+                    <li>AI三画像合成：教师、板书、课件智能组合</li>
+                </ul>
+
+                <h4>4. 教学质量报告</h4>
+                <ul>
+                    <li>课堂参与度、知识点掌握情况分析</li>
+                    <li>与历史数据对比，发现教学改进点</li>
+                    <li>为教师提供数据驱动的教学建议</li>
+                </ul>
+
+                <div class="feature-highlight">
+                    <h5><i class="fas fa-star"></i> 教育价值</h5>
+                    <p>有利于提高教师专业水平，促进优质教学资源积累。领导可远程巡课听课，形成学校特色网络化精品课程，为翻转课堂提供资源保障。</p>
+                </div>
+            </div>
+
+            <!-- 虚拟数字助教 -->
+            <div class="feature-detail" id="assistant">
+                <h3><i class="fas fa-robot"></i> 模块6：虚拟数字助教（创新功能）</h3>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 2rem;">让学习"24小时不打烊"，个性化智能辅导</p>
+                
+                <h4>1. 课前预习辅导</h4>
+                <ul>
+                    <li>AI助教解答学生预习问题</li>
+                    <li>记录学生疑问点，反馈给教师</li>
+                    <li>推荐相关学习资源和视频</li>
+                </ul>
+
+                <h4>2. 课中协同教学</h4>
+                <ul>
+                    <li>语音控制教室设备（开关投影、调节灯光）</li>
+                    <li>实时生成字幕，辅助听障学生</li>
+                    <li>自动考勤、知识点归类切片</li>
+                    <li>实现视频、音频、文字强关联</li>
+                </ul>
+
+                <h4>3. 课后个性化辅导</h4>
+                <ul>
+                    <li>24小时在线答疑，即问即答</li>
+                    <li>根据学生需求回放特定知识点讲解</li>
+                    <li>作业精细化批改，指出错误原因</li>
+                    <li>个性化学习路径推荐，查漏补缺</li>
+                </ul>
+
+                <h4>4. 知识管理</h4>
+                <ul>
+                    <li>自动归类整理课堂知识点</li>
+                    <li>建立课程问答知识库</li>
+                    <li>根据学生提问频次优化教学重点</li>
+                    <li>支持知识图谱可视化展示</li>
+                </ul>
+
+                <div class="feature-highlight">
+                    <h5><i class="fas fa-brain"></i> AI技术支持</h5>
+                    <p>利用采集的课堂数据构建AI知识库并标记，根据用户要求和标签调用对应知识库。基于NLP自然语言处理技术，从课堂讲解内容中提取知识点回答用户提问，实现智能化、个性化学习支持。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 功能对比总结 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">功能特色对比</h2>
+            <div style="overflow-x: auto;">
+                <table style="width: 100%; border-collapse: collapse; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <thead>
+                        <tr style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                            <th style="padding: 1rem; text-align: left;">功能模块</th>
+                            <th style="padding: 1rem; text-align: left;">传统模式</th>
+                            <th style="padding: 1rem; text-align: left;">智慧模式</th>
+                            <th style="padding: 1rem; text-align: left;">提升效果</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 1rem; font-weight: bold;">教室查找</td>
+                            <td style="padding: 1rem;">逐层扫楼，耗时30分钟+</td>
+                            <td style="padding: 1rem;">地图查询，1分钟定位</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">效率提升30倍</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0; background: #f9f9f9;">
+                            <td style="padding: 1rem; font-weight: bold;">设备报修</td>
+                            <td style="padding: 1rem;">电话报修，响应1-2天</td>
+                            <td style="padding: 1rem;">扫码报修，5分钟响应</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">响应速度提升200倍</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 1rem; font-weight: bold;">课堂考勤</td>
+                            <td style="padding: 1rem;">人工点名，占用5-10分钟</td>
+                            <td style="padding: 1rem;">无感签到，0干扰</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">节省教学时间100%</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0; background: #f9f9f9;">
+                            <td style="padding: 1rem; font-weight: bold;">环境调控</td>
+                            <td style="padding: 1rem;">人工操作，经常遗忘</td>
+                            <td style="padding: 1rem;">自动调控，智能节能</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">节能50-100万/年</td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid #f0f0f0;">
+                            <td style="padding: 1rem; font-weight: bold;">课程复习</td>
+                            <td style="padding: 1rem;">整段视频查找，效率低</td>
+                            <td style="padding: 1rem;">PPT切片，精准定位</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">复习效率提升10倍</td>
+                        </tr>
+                        <tr style="background: #f9f9f9;">
+                            <td style="padding: 1rem; font-weight: bold;">学习答疑</td>
+                            <td style="padding: 1rem;">等待教师，时间受限</td>
+                            <td style="padding: 1rem;">AI助教，24小时在线</td>
+                            <td style="padding: 1rem; color: var(--secondary-color); font-weight: bold;">服务时间延长24倍</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>智慧教室管理系统</h4>
+                    <p>运用物联网、人工智能、大数据等技术，构建新一代智慧教育平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="features.html">系统功能</a></li>
+                        <li><a href="architecture.html">平台架构</a></li>
+                        <li><a href="roles.html">参与者角色</a></li>
+                        <li><a href="business.html">商业模式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> info@smartclassroom.edu</p>
+                    <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 智慧教室管理信息系统. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
