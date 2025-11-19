@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参与者角色 - 智慧教室管理信息系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .role-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+            transition: var(--transition);
+        }
+        .role-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .role-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .role-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .role-info h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.5rem;
+        }
+        .role-info p {
+            color: #666;
+        }
+        .role-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        .detail-section {
+            background: #f8f9fa;
+            padding: 1rem;
+            border-radius: 8px;
+        }
+        .detail-section h4 {
+            color: var(--primary-color);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        .detail-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .detail-section li {
+            padding: 0.4rem 0;
+            color: #555;
+        }
+        .detail-section li::before {
+            content: '✓ ';
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        .platform-model {
+            background: white;
+            padding: 3rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 2rem 0;
+        }
+        .model-diagram {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .model-box {
+            flex: 1;
+            min-width: 200px;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            text-align: center;
+        }
+        .demand-side {
+            background: linear-gradient(135deg, #50C878 0%, #48A868 100%);
+            color: white;
+        }
+        .platform-side {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .supply-side {
+            background: linear-gradient(135deg, #FF6B6B 0%, #E85A5A 100%);
+            color: white;
+        }
+        .model-box h4 {
+            margin-bottom: 1rem;
+        }
+        .model-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .model-box li {
+            padding: 0.5rem 0;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>智慧教室管理系统</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">系统功能</a></li>
+                <li><a href="architecture.html">平台架构</a></li>
+                <li><a href="roles.html" class="active">参与者角色</a></li>
+                <li><a href="business.html">商业模式</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" style="font-size: 2.5rem;">参与者与角色</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem;">多方协同，构建智慧教育生态</p>
+        </div>
+    </section>
+
+    <!-- 双边市场模型 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">双边市场模型</h2>
+            <p class="section-subtitle">平台方连接需求侧与供给侧，创造网络效应</p>
+            
+            <div class="platform-model">
+                <div class="model-diagram">
+                    <div class="model-box demand-side">
+                        <h4><i class="fas fa-users"></i> 需求侧</h4>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">资源使用者</p>
+                        <ul>
+                            <li>学生群体</li>
+                            <li>需要自习空间</li>
+                            <li>需要活动场地</li>
+                            <li>需要学习资源</li>
+                        </ul>
+                        <hr style="border: 1px solid rgba(255,255,255,0.3); margin: 1rem 0;">
+                        <ul>
+                            <li>教师群体</li>
+                            <li>需要教学环境</li>
+                            <li>需要教学工具</li>
+                            <li>需要质量反馈</li>
+                        </ul>
+                    </div>
+
+                    <div style="font-size: 3rem; color: var(--primary-color);">⇄</div>
+
+                    <div class="model-box platform-side">
+                        <h4><i class="fas fa-brain"></i> 平台方</h4>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">智慧教室管理系统</p>
+                        <ul>
+                            <li>撮合供需匹配</li>
+                            <li>制定平台规则</li>
+                            <li>提供基础设施</li>
+                            <li>数据分析服务</li>
+                            <li>AI智能算法</li>
+                            <li>创造网络效应</li>
+                        </ul>
+                    </div>
+
+                    <div style="font-size: 3rem; color: var(--primary-color);">⇄</div>
+
+                    <div class="model-box supply-side">
+                        <h4><i class="fas fa-building"></i> 供给侧</h4>
+                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">资源/服务提供者</p>
+                        <ul>
+                            <li>学校机构</li>
+                            <li>提供教室资源</li>
+                            <li>提供设备资源</li>
+                        </ul>
+                        <hr style="border: 1px solid rgba(255,255,255,0.3); margin: 1rem 0;">
+                        <ul>
+                            <li>设备厂商</li>
+                            <li>智能硬件</li>
+                            <li>维保服务</li>
+                        </ul>
+                        <hr style="border: 1px solid rgba(255,255,255,0.3); margin: 1rem 0;">
+                        <ul>
+                            <li>内容服务商</li>
+                            <li>AI助教</li>
+                            <li>学习资源</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div style="background: #f8f9fa; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                    <h4 style="color: var(--primary-color); margin-bottom: 1rem;"><i class="fas fa-chart-line"></i> 平台价值创造</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                        <div>
+                            <h5 style="color: var(--dark-color);">网络效应</h5>
+                            <p style="color: #666;">用户越多 → 数据越丰富 → AI越准确 → 体验越好 → 吸引更多用户</p>
+                        </div>
+                        <div>
+                            <h5 style="color: var(--dark-color);">规模经济</h5>
+                            <p style="color: #666;">服务学校越多 → 边际成本越低 → 价格越有竞争力</p>
+                        </div>
+                        <div>
+                            <h5 style="color: var(--dark-color);">数据价值</h5>
+                            <p style="color: #666;">积累教学数据 → 训练AI模型 → 提升服务质量 → 形成技术壁垒</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 具体角色 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">具体角色与功能</h2>
+            
+            <!-- 学生 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>学生</h3>
+                        <p>核心诉求：便捷找教室、自习、活动申请、学习支持</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>查询空闲教室</li>
+                            <li>预约教室申请</li>
+                            <li>扫码报修设备</li>
+                            <li>使用学习助手</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>节省找教室时间</li>
+                            <li>提升学习效率</li>
+                            <li>个性化学习服务</li>
+                            <li>24小时学习支持</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>教室实时查询</li>
+                            <li>活动场地预约</li>
+                            <li>AI答疑助手</li>
+                            <li>录播课程回放</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 教师 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>教师</h3>
+                        <p>核心诉求：教学环境保障、质量数据反馈、减轻工作负担</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>预约优先权限</li>
+                            <li>考勤管理查看</li>
+                            <li>教学数据分析</li>
+                            <li>设备一键控制</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>数据驱动教学改进</li>
+                            <li>自动考勤节省时间</li>
+                            <li>教学质量可视化</li>
+                            <li>专注教学本身</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>教室提前预约</li>
+                            <li>无感考勤系统</li>
+                            <li>课后数据报告</li>
+                            <li>录播视频管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 管理员 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>管理员</h3>
+                        <p>核心诉求：资源优化配置、数据决策支持、降低运营成本</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>全局资源调度</li>
+                            <li>审批流程管理</li>
+                            <li>系统配置权限</li>
+                            <li>数据统计分析</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>可视化全局管理</li>
+                            <li>科学决策支持</li>
+                            <li>提升资源利用率</li>
+                            <li>降低管理成本</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>教室分配调度</li>
+                            <li>数据可视化看板</li>
+                            <li>活动申请审批</li>
+                            <li>设备运维管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 运维人员 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>运维人员</h3>
+                        <p>核心诉求：高效处理故障、减少重复工作、绩效考核透明</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>工单查看抢单</li>
+                            <li>巡检计划管理</li>
+                            <li>备件库存管理</li>
+                            <li>知识库查询</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>智能派单提效</li>
+                            <li>知识经验沉淀</li>
+                            <li>绩效量化考核</li>
+                            <li>工作透明可追溯</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>工单抢单处理</li>
+                            <li>设备巡检记录</li>
+                            <li>维修案例查询</li>
+                            <li>备件申请管理</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 决策者 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>决策者（校领导）</h3>
+                        <p>核心诉求：战略规划、投资决策、绩效评估</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>高级数据看板</li>
+                            <li>只读查看权限</li>
+                            <li>趋势分析报告</li>
+                            <li>对比分析功能</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>全局数据洞察</li>
+                            <li>趋势预测分析</li>
+                            <li>投资回报评估</li>
+                            <li>战略决策支持</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>资源利用率统计</li>
+                            <li>节能效果分析</li>
+                            <li>教学质量评估</li>
+                            <li>投资回报分析</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 设备厂商 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>设备厂商</h3>
+                        <p>核心诉求：推广产品、获取订单、提升品牌影响力</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>商城入驻权限</li>
+                            <li>产品展示发布</li>
+                            <li>订单管理查看</li>
+                            <li>数据分析查看</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>精准触达客户</li>
+                            <li>交易撮合便捷</li>
+                            <li>品牌曝光机会</li>
+                            <li>用户画像分析</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>设备商城展示</li>
+                            <li>采购需求对接</li>
+                            <li>维保服务提供</li>
+                            <li>技术支持服务</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 内容服务商 -->
+            <div class="role-card">
+                <div class="role-header">
+                    <div class="role-icon">
+                        <i class="fas fa-book-open"></i>
+                    </div>
+                    <div class="role-info">
+                        <h3>内容服务商</h3>
+                        <p>核心诉求：推广教育服务、获取用户、扩大市场份额</p>
+                    </div>
+                </div>
+                <div class="role-details">
+                    <div class="detail-section">
+                        <h4>系统权限</h4>
+                        <ul>
+                            <li>服务接入权限</li>
+                            <li>内容发布管理</li>
+                            <li>用户数据分析</li>
+                            <li>效果统计查看</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>平台价值</h4>
+                        <ul>
+                            <li>流量导入支持</li>
+                            <li>用户画像精准</li>
+                            <li>转化率提升</li>
+                            <li>品牌传播扩大</li>
+                        </ul>
+                    </div>
+                    <div class="detail-section">
+                        <h4>主要功能</h4>
+                        <ul>
+                            <li>AI助教服务</li>
+                            <li>学习资源提供</li>
+                            <li>在线课程接入</li>
+                            <li>教学工具集成</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>智慧教室管理系统</h4>
+                    <p>运用物联网、人工智能、大数据等技术，构建新一代智慧教育平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="features.html">系统功能</a></li>
+                        <li><a href="architecture.html">平台架构</a></li>
+                        <li><a href="roles.html">参与者角色</a></li>
+                        <li><a href="business.html">商业模式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> info@smartclassroom.edu</p>
+                    <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 智慧教室管理信息系统. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

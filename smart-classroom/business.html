@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商业模式 - 智慧教室管理信息系统</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .revenue-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin: 1.5rem 0;
+            transition: var(--transition);
+        }
+        .revenue-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+        }
+        .revenue-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid var(--light-color);
+        }
+        .revenue-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+        }
+        .revenue-title h3 {
+            color: var(--dark-color);
+            margin-bottom: 0.3rem;
+        }
+        .revenue-type {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        .cost-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+        }
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+        .cost-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid var(--accent-color);
+        }
+        .cost-item h4 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        .cost-item ul {
+            list-style: none;
+            padding: 0;
+        }
+        .cost-item li {
+            padding: 0.4rem 0;
+            color: #666;
+        }
+        .cost-item li::before {
+            content: '• ';
+            color: var(--accent-color);
+            font-weight: bold;
+        }
+        .challenge-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        .challenge-card {
+            background: white;
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .challenge-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        .challenge-badge {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .badge-high { background: #FFE5E5; color: #D32F2F; }
+        .badge-medium { background: #FFF3CD; color: #F57C00; }
+        .badge-low { background: #E8F5E9; color: #388E3C; }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <i class="fas fa-brain"></i>
+                <span>智慧教室管理系统</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="features.html">系统功能</a></li>
+                <li><a href="architecture.html">平台架构</a></li>
+                <li><a href="roles.html">参与者角色</a></li>
+                <li><a href="business.html" class="active">商业模式</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 页面标题 -->
+    <section class="hero" style="padding: 60px 0;">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <h1 class="hero-title" style="font-size: 2.5rem;">商业模式设计</h1>
+            <p class="hero-subtitle" style="font-size: 1.2rem;">多元化盈利模式，可持续发展</p>
+        </div>
+    </section>
+
+    <!-- 盈利模式 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">五大盈利模式</h2>
+            <p class="section-subtitle">构建多元化、可持续的收入来源</p>
+
+            <!-- 基础建设费 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <div class="revenue-icon">
+                        <i class="fas fa-building"></i>
+                    </div>
+                    <div class="revenue-title">
+                        <h3>1. 基础建设费</h3>
+                        <span class="revenue-type">一次性收入 | 初期投入</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">硬件采购</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 环境传感器（温湿度、光照、CO₂等）</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 视觉设备（摄像头、拾音器）</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 智能控制设备（门禁、开关、空调）</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 物联网网关与边缘计算节点</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">系统部署</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 软件系统安装与配置</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 数据迁移与系统集成</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 网络改造与优化</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 人员培训与上线支持</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-bottom: 0.8rem;">投资规模参考</h4>
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">中型高校示例：</p>
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">• 学生规模：2万人</p>
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">• 教室数量：300间</p>
+                        <p style="font-size: 1.5rem; font-weight: bold; margin-top: 1rem;">总投资：600-800万元</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SaaS订阅费 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <div class="revenue-icon">
+                        <i class="fas fa-sync-alt"></i>
+                    </div>
+                    <div class="revenue-title">
+                        <h3>2. SaaS订阅费</h3>
+                        <span class="revenue-type">持续性收入 | 按年收费</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">收费模式</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 按学生数量阶梯定价</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 包年订阅优惠</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 多年签约折扣</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">服务内容</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 系统运维与升级</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 7×24小时技术支持</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 云存储与数据备份</li>
+                            <li style="padding: 0.3rem 0; color: #666;">✓ 定期培训与咨询</li>
+                        </ul>
+                    </div>
+                    <div style="background: linear-gradient(135deg, #50C878 0%, #48A868 100%); color: white; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="margin-bottom: 0.8rem;">收入预估</h4>
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">2万学生学校：</p>
+                        <p style="opacity: 0.9; margin-bottom: 0.5rem;">• 每生每年：50-80元</p>
+                        <p style="font-size: 1.5rem; font-weight: bold; margin-top: 1rem;">年收入：100-160万元</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 增值服务费 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <div class="revenue-icon">
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <div class="revenue-title">
+                        <h3>3. 增值服务费</h3>
+                        <span class="revenue-type">可选模块 | 按需购买</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">AI助教模块</h4>
+                        <p style="color: #666; margin-bottom: 1rem;">24小时智能答疑、个性化学习推荐</p>
+                        <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-color);">20万元/年</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">高级数据分析</h4>
+                        <p style="color: #666; margin-bottom: 1rem;">深度学情分析、教学质量评估</p>
+                        <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-color);">15万元/年</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">4K录直播系统</h4>
+                        <p style="color: #666; margin-bottom: 1rem;">多机位智能录播、精品课程制作</p>
+                        <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-color);">30万元/年</p>
+                    </div>
+                    <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px;">
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">定制化开发</h4>
+                        <p style="color: #666; margin-bottom: 1rem;">特殊需求功能开发、系统对接</p>
+                        <p style="font-size: 1.3rem; font-weight: bold; color: var(--dark-color);">按项目报价</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 平台交易佣金 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <div class="revenue-icon">
+                        <i class="fas fa-handshake"></i>
+                    </div>
+                    <div class="revenue-title">
+                        <h3>4. 平台交易佣金</h3>
+                        <span class="revenue-type">生态收入 | 抽成模式</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">设备商城</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;">学校采购智能硬件设备</p>
+                        <p style="color: var(--secondary-color); font-weight: bold;">佣金比例：5-8%</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">第三方服务</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;">教育机构入驻提供服务</p>
+                        <p style="color: var(--secondary-color); font-weight: bold;">佣金比例：10-15%</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">内容市场</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;">教学资源、课程交易</p>
+                        <p style="color: var(--secondary-color); font-weight: bold;">佣金比例：20%</p>
+                    </div>
+                </div>
+                <div style="background: linear-gradient(135deg, #FF6B6B 0%, #E85A5A 100%); color: white; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                    <h4 style="margin-bottom: 0.8rem;"><i class="fas fa-chart-line"></i> 生态价值</h4>
+                    <p style="opacity: 0.9;">随着平台用户规模扩大，生态交易额将快速增长。预计3年后平台交易佣金将成为重要收入来源，占总收入的20-30%。</p>
+                </div>
+            </div>
+
+            <!-- 数据服务费 -->
+            <div class="revenue-card">
+                <div class="revenue-header">
+                    <div class="revenue-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <div class="revenue-title">
+                        <h3>5. 数据服务费</h3>
+                        <span class="revenue-type">长期价值 | 咨询服务</span>
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">行业分析报告</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;">匿名化数据统计、行业趋势分析</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;">目标客户：教育局、研究机构</p>
+                        <p style="color: var(--secondary-color); font-weight: bold;">5-10万元/份</p>
+                    </div>
+                    <div>
+                        <h4 style="color: var(--primary-color); margin-bottom: 0.8rem;">决策咨询服务</h4>
+                        <p style="color: #666; margin-bottom: 0.5rem;">智慧校园规划、投资评估</p>
+                        <p style="color: #666; margin-bottom: 0.5rem;">目标客户：高校、教育集团</p>
+                        <p style="color: var(--secondary-color); font-weight: bold;">50-100万元/项目</p>
+                    </div>
+                </div>
+                <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-top: 1.5rem;">
+                    <p style="color: #666;"><i class="fas fa-info-circle" style="color: var(--primary-color);"></i> <strong>数据安全承诺：</strong>所有数据服务均基于匿名化、脱敏处理后的聚合数据，严格遵守数据安全与隐私保护法规，不泄露任何个人或学校敏感信息。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 成本结构 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">成本结构分析</h2>
+            
+            <div class="cost-section">
+                <h3 style="color: var(--primary-color); margin-bottom: 1.5rem;"><i class="fas fa-coins"></i> 固定成本</h3>
+                <div class="cost-grid">
+                    <div class="cost-item">
+                        <h4>研发投入</h4>
+                        <ul>
+                            <li>系统开发与迭代</li>
+                            <li>AI算法优化</li>
+                            <li>新功能研发</li>
+                            <li>技术专利申请</li>
+                        </ul>
+                    </div>
+                    <div class="cost-item">
+                        <h4>人员工资</h4>
+                        <ul>
+                            <li>技术团队（30-50人）</li>
+                            <li>运营团队（20-30人）</li>
+                            <li>销售团队（10-20人）</li>
+                            <li>管理团队（5-10人）</li>
+                        </ul>
+                    </div>
+                    <div class="cost-item">
+                        <h4>服务器费用</h4>
+                        <ul>
+                            <li>云服务器租用</li>
+                            <li>带宽费用</li>
+                            <li>存储费用</li>
+                            <li>CDN加速</li>
+                        </ul>
+                    </div>
+                    <div class="cost-item">
+                        <h4>运营费用</h4>
+                        <ul>
+                            <li>办公场地租金</li>
+                            <li>市场营销推广</li>
+                            <li>行政管理费用</li>
+                            <li>法律合规成本</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cost-section">
+                <h3 style="color: var(--accent-color); margin-bottom: 1.5rem;"><i class="fas fa-chart-line"></i> 可变成本</h3>
+                <div class="cost-grid">
+                    <div class="cost-item" style="border-left-color: var(--primary-color);">
+                        <h4>硬件采购</h4>
+                        <ul>
+                            <li>随客户数量线性增长</li>
+                            <li>批量采购享受折扣</li>
+                            <li>供应链管理优化</li>
+                        </ul>
+                    </div>
+                    <div class="cost-item" style="border-left-color: var(--primary-color);">
+                        <h4>实施部署</h4>
+                        <ul>
+                            <li>每所学校20-30万元</li>
+                            <li>人工现场安装调试</li>
+                            <li>培训与上线支持</li>
+                        </ul>
+                    </div>
+                    <div class="cost-item" style="border-left-color: var(--primary-color);">
+                        <h4>运维支持</h4>
+                        <ul>
+                            <li>7×24小时客服</li>
+                            <li>现场技术支持</li>
+                            <li>定期巡检维护</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 2rem; border-radius: 8px; margin-top: 2rem;">
+                <h3 style="margin-bottom: 1rem;"><i class="fas fa-balance-scale"></i> 规模经济效应</h3>
+                <p style="opacity: 0.9; margin-bottom: 1rem;">随着服务学校数量增加，单位成本将显著下降：</p>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                    <div>
+                        <h4>10所学校</h4>
+                        <p>单校成本：100万/年</p>
+                    </div>
+                    <div>
+                        <h4>50所学校</h4>
+                        <p>单校成本：70万/年</p>
+                    </div>
+                    <div>
+                        <h4>100所学校</h4>
+                        <p>单校成本：50万/年</p>
+                    </div>
+                    <div>
+                        <h4>500所学校</h4>
+                        <p>单校成本：30万/年</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 实施挑战 -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">实施挑战与应对</h2>
+            <p class="section-subtitle">识别关键风险，制定应对策略</p>
+            
+            <div class="challenge-grid">
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-high">高风险</span>
+                    <h4><i class="fas fa-cogs"></i> 技术实施难点</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>系统集成复杂，需对接10+异构系统</p>
+                    <p style="color: #666;"><strong>应对：</strong>采用ESB企业服务总线统一接口管理，制定标准数据交换协议</p>
+                </div>
+
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-high">高风险</span>
+                    <h4><i class="fas fa-database"></i> 数据孤岛打破</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>各部门数据格式不统一，历史数据质量差</p>
+                    <p style="color: #666;"><strong>应对：</strong>建立MDM主数据管理平台，统一数据字典，数据清洗工具+人工核验</p>
+                </div>
+
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-medium">中风险</span>
+                    <h4><i class="fas fa-users"></i> 用户习惯改变</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>师生习惯传统流程，对新系统抵触</p>
+                    <p style="color: #666;"><strong>应对：</strong>分批培训，设置过渡期，激励早期使用者</p>
+                </div>
+
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-high">高风险</span>
+                    <h4><i class="fas fa-money-bill-wave"></i> 预算获批</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>学校经费紧张，一次性投入大</p>
+                    <p style="color: #666;"><strong>应对：</strong>强调节能收益，提供分期方案，申请政府专项资金</p>
+                </div>
+
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-medium">中风险</span>
+                    <h4><i class="fas fa-user-shield"></i> 隐私争议</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>部分师生担心被监控，引发隐私焦虑</p>
+                    <p style="color: #666;"><strong>应对：</strong>召开听证会，公开隐私保护措施，提供退出机制</p>
+                </div>
+
+                <div class="challenge-card">
+                    <span class="challenge-badge badge-low">低风险</span>
+                    <h4><i class="fas fa-sync-alt"></i> 持续运营</h4>
+                    <p style="color: #666; margin-bottom: 1rem;"><strong>问题：</strong>系统上线后使用率下降</p>
+                    <p style="color: #666;"><strong>应对：</strong>设立专职运营团队，定期举办活动，持续功能迭代</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 发展规划 -->
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">三年发展规划</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 1.5rem 0; border-left: 4px solid var(--primary-color);">
+                    <h3 style="color: var(--primary-color); margin-bottom: 1rem;">第一年：市场验证期</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 完成5-10所标杆学校部署</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 收集用户反馈，优化产品功能</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 打磨商业模式，验证市场需求</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 目标营收：500-800万元</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 1.5rem 0; border-left: 4px solid var(--secondary-color);">
+                    <h3 style="color: var(--secondary-color); margin-bottom: 1rem;">第二年：规模扩张期</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 扩展至50-100所学校</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 建立区域服务中心</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 完成B轮融资1.5亿元</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 目标营收：5000-8000万元</li>
+                    </ul>
+                </div>
+
+                <div style="background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin: 1.5rem 0; border-left: 4px solid var(--accent-color);">
+                    <h3 style="color: var(--accent-color); margin-bottom: 1rem;">第三年：生态构建期</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 覆盖300-500所学校</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 建立开放生态，引入第三方服务</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 平台交易额突破1亿元</li>
+                        <li style="padding: 0.5rem 0; color: #666;">✓ 目标营收：2-3亿元</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>智慧教室管理系统</h4>
+                    <p>运用物联网、人工智能、大数据等技术，构建新一代智慧教育平台</p>
+                </div>
+                <div class="footer-section">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="features.html">系统功能</a></li>
+                        <li><a href="architecture.html">平台架构</a></li>
+                        <li><a href="roles.html">参与者角色</a></li>
+                        <li><a href="business.html">商业模式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>联系我们</h4>
+                    <p><i class="fas fa-envelope"></i> info@smartclassroom.edu</p>
+                    <p><i class="fas fa-phone"></i> 400-123-4567</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 智慧教室管理信息系统. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
